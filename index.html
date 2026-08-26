@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIP使い方Q&amp;A</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>KIP使い方Q&amp;A</h1>
+  <p class="site-lead">KIPを使うときの「これでいいのかな？」に答えます</p>
+</header>
+
+<div class="search-wrap">
+  <label for="search-input" class="search-label">キーワードで探す</label>
+  <div class="search-box">
+    <input
+      type="search"
+      id="search-input"
+      placeholder="例：モンスター、保護者、相談 など"
+      autocomplete="off"
+      inputmode="search"
+      disabled
+    >
+    <button type="button" id="search-clear" class="search-clear" aria-label="検索文字をクリア" hidden>&times;</button>
+  </div>
+  <p id="result-count" class="result-count" aria-live="polite"></p>
+</div>
+
+<main id="faq-root" class="faq-root">
+  <p id="loading-message" class="loading-message">読み込み中です…</p>
+</main>
+
+<p id="no-results" class="no-results" hidden>あてはまる質問が見つかりませんでした。<br>別のキーワードで探してみてください。</p>
+
+<footer class="site-footer">
+  <p>&copy; KIP使い方Q&amp;A</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+:root {
+  --color-bg: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-border: #e2ddd2;
+  --color-text: #2f2b24;
+  --color-text-muted: #6b6459;
+  --color-primary: #2f7d6b;
+  --color-primary-dark: #1f5b4d;
+  --color-accent: #e8734a;
+  --color-focus: #1a6fb0;
+  --radius: 14px;
+  --max-width: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo",
+    system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 28px 20px 24px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.site-lead {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #eafaf3;
+}
+
+/* ---------- Search ---------- */
+
+.search-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+  padding: 16px 16px 8px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.search-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 100%;
+  padding: 14px 44px 14px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  min-height: 48px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px rgba(26, 111, 176, 0.18);
+}
+
+.search-clear {
+  position: absolute;
+  right: 6px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-text);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-clear:hover {
+  background: #d6cfc0;
+}
+
+.result-count {
+  margin: 8px 2px 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  min-height: 1.2em;
+}
+
+/* ---------- FAQ layout ---------- */
+
+.faq-root {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8px 16px 24px;
+}
+
+.loading-message {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 40px 0;
+}
+
+.category-section {
+  margin-top: 24px;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.category-count {
+  font-size: 0.78rem;
+  font-weight: normal;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- Accordion item ---------- */
+
+.qa-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.qa-item[open] {
+  border-color: var(--color-primary);
+}
+
+.qa-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 44px 14px 16px;
+  font-weight: bold;
+  color: var(--color-text);
+  position: relative;
+  min-height: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.qa-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.qa-item summary:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: -3px;
+}
+
+.qa-badge {
+  flex: none;
+  color: #fff;
+  background: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 2px 6px;
+  line-height: 1.4;
+}
+
+.qa-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.qa-item[open] summary::after {
+  content: "\2212";
+}
+
+.qa-answer {
+  padding: 0 16px 18px 16px;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  margin-top: 2px;
+  padding-top: 12px;
+}
+
+.qa-answer p {
+  margin: 0 0 0.7em;
+  white-space: pre-line;
+}
+
+.qa-answer p:last-child {
+  margin-bottom: 0;
+}
+
+mark {
+  background: #ffe9a8;
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+/* ---------- No results ---------- */
+
+.no-results {
+  text-align: center;
+  color: var(--color-text-muted);
+  max-width: var(--max-width);
+  margin: 20px auto;
+  padding: 24px 16px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  padding: 24px 16px 32px;
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+
+  .site-header h1 {
+    font-size: 1.8rem;
+  }
+}
