@@ -55,6 +55,80 @@ a {
   color: #eafaf3;
 }
 
+/* ---------- Intro (ご利用にあたって) ---------- */
+
+.intro-section {
+  max-width: var(--max-width);
+  margin: 16px auto 0;
+  padding: 0 16px;
+}
+
+.intro-section > summary {
+  list-style: none;
+  cursor: pointer;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 14px 44px 14px 16px;
+  font-weight: bold;
+  color: var(--color-text);
+  position: relative;
+}
+
+.intro-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.intro-section > summary:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: -3px;
+}
+
+.intro-section > summary::after {
+  content: "\2212";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.intro-section:not([open]) > summary::after {
+  content: "+";
+}
+
+.intro-section:not([open]) > summary {
+  border-radius: var(--radius);
+}
+
+.intro-section[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.intro-body {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 4px 16px 16px;
+}
+
+.intro-body p {
+  margin: 0.8em 0 0;
+  font-size: 0.95rem;
+}
+
+.intro-notice {
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
 /* ---------- Search ---------- */
 
 .search-wrap {
